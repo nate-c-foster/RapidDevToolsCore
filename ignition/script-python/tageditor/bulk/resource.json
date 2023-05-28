@@ -1,0 +1,17 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "code.py"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "ncf5684",
+      "timestamp": "2023-05-25T05:40:22Z"
+    },
+    "hintScope": 2,
+    "lastModificationSignature": "fed68a6325ad6a1045f7df5e0afc2623e258748f396bf1858e02aec2e23edf66"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "scope": "DG",
+  "version": 2,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "query.sql"
+  ],
+  "attributes": {
+    "useMaxReturnSize": false,
+    "autoBatchEnabled": false,
+    "fallbackValue": "",
+    "maxReturnSize": 100,
+    "cacheUnit": "SEC",
+    "type": "UpdateQuery",
+    "enabled": true,
+    "cacheAmount": 1,
+    "cacheEnabled": false,
+    "database": "{}",
+    "fallbackEnabled": false,
+    "lastModificationSignature": "1cc4cf6f6e2488924b98bfedfc4ed23628e302a0a7167555300a00b81fdb79f0",
+    "permissions": [
+      {
+        "zone": "",
+        "role": ""
+      }
+    ],
+    "lastModification": {
+      "actor": "ncf5684",
+      "timestamp": "2023-05-25T00:29:21Z"
+    },
+    "parameters": [
+      {
+        "type": "Database",
+        "identifier": "database",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "tableName",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "columnName",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "newValue",
+        "sqlType": 7
+      },
+      {
+        "type": "QueryString",
+        "identifier": "primaryKey",
+        "sqlType": 7
+      },
+      {
+        "type": "Parameter",
+        "identifier": "primaryKeyValue",
+        "sqlType": 2
+      },
+      {
+        "type": "Parameter",
+        "identifier": "lastModifiedBy",
+        "sqlType": 7
+      }
+    ]
+  }
+}
