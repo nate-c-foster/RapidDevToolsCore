@@ -21,7 +21,7 @@ A suite of tools to speed up development of large Ignition Perspective projects.
   - Table Editor - quickly view and edit any database table connected to the gateway.
   - Export/Import - export and import database tables as csv files.
 
-- **Backup & Restore**
+- **Backup & Restore (currently under development)**
   - Backup certain resources (tags, db tables, themes, images, icons) to a specific project folder. Useful for version control.
   - Restore resources from a specific project folder. Helps a developer quickly change "context" when working with different projects.
 
