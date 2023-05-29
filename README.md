@@ -23,7 +23,7 @@ A suite of tools to speed up development of large Ignition Perspective projects.
 
 - **Backup & Restore (currently under development)**
   - Backup certain resources (tags, db tables, themes, images, icons) to a specific project folder. Useful for version control.
-  - Restore resources from a specific project folder. Helps a developer quickly change "context" when working with different projects.
+  - Restore resources from a specific project folder. Helps a developer quickly change "context" when working with different project versions.
 
 - **Misc Features**
   - quickly view the log wrapper by pulling up the bottom dock
@@ -32,5 +32,7 @@ A suite of tools to speed up development of large Ignition Perspective projects.
 
 
 ## Installation
+
+## Documentation
 
 ## Contribute
