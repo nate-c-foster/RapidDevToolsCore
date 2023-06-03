@@ -28,7 +28,7 @@ A suite of tools to speed up development of large Ignition Perspective projects.
   - Backup certain resources (tags, db tables, themes, icons) to a specific project folder. Useful for version control.
   - Restore resources from a specific project folder. Helps a developer quickly change "context" when working with different project versions.
 
-![backupRestore](https://github.com/nate-c-foster/RapidDevToolsCore/assets/3751687/c2e3a677-dc63-47c6-b7b9-8dc5bbc9bd48)
+![backupRestore](https://github.com/nate-c-foster/RapidDevToolsCore/assets/3751687/6be001bd-413a-491e-8dc2-0f364b3f4664)
 
 ### Misc Features
   - quickly view the log wrapper by pulling up the bottom dock
@@ -39,9 +39,9 @@ A suite of tools to speed up development of large Ignition Perspective projects.
 
 ![settings](https://github.com/nate-c-foster/RapidDevToolsCore/assets/3751687/d6b406a1-4036-4b3a-8f30-352de037812c)
 
-  - easy to add your own custom tools
-
-
+  - easy to add your own custom tools (below tool was initially developed by Flexware and American Water!)
+  
+![locationModel](https://github.com/nate-c-foster/RapidDevToolsCore/assets/3751687/14e717d0-dc89-471c-889b-2b477772e873)
 
 
 ## Installation
