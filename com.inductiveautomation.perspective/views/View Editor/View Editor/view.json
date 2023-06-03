@@ -39,12 +39,19 @@
                           ],
                           "type": "tag"
                         }
+                      },
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "expression": "{session.custom.tagProvider} + \u0027RapidDev/View Editor/Generate Functions\u0027"
+                          },
+                          "type": "expr"
+                        }
                       }
                     },
                     "props": {
                       "params": {
                         "selectedFunctions": [],
-                        "tagPath": "[SCADA]RapidDev/View Editor/Generate Functions",
                         "type": "Generate"
                       },
                       "path": "Global Components/Functions/Select Function",
@@ -77,12 +84,19 @@
                           ],
                           "type": "tag"
                         }
+                      },
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "expression": "{session.custom.tagProvider} + \u0027RapidDev/View Editor/Filter Functions\u0027"
+                          },
+                          "type": "expr"
+                        }
                       }
                     },
                     "props": {
                       "params": {
                         "selectedFunctions": [],
-                        "tagPath": "[SCADA]RapidDev/View Editor/Filter Functions",
                         "type": "Filter"
                       },
                       "path": "Global Components/Functions/Select Function",
@@ -115,12 +129,19 @@
                           ],
                           "type": "tag"
                         }
+                      },
+                      "props.params.tagPath": {
+                        "binding": {
+                          "config": {
+                            "expression": "{session.custom.tagProvider} + \u0027RapidDev/View Editor/Transform Functions\u0027"
+                          },
+                          "type": "expr"
+                        }
                       }
                     },
                     "props": {
                       "params": {
                         "selectedFunctions": [],
-                        "tagPath": "[SCADA]RapidDev/View Editor/Transform Functions",
                         "type": "Transform"
                       },
                       "path": "Global Components/Functions/Select Function",

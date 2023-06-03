@@ -55,3 +55,4 @@ def getTagProvider():
 			return str(tagProvider)
 			
 	print 'RapidDev folder not found'
+	return '[default]'
