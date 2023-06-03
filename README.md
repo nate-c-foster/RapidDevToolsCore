@@ -3,7 +3,7 @@
 A suite of tools to speed up development of large Ignition Perspective projects. 
 
 
-## Showcase
+## Screenshots
 
 ![functionalTagEditor](https://github.com/nate-c-foster/RapidDevToolsCore/assets/3751687/9a6309c5-abe5-462e-8d62-27dd5eb265b9)
 
@@ -22,7 +22,7 @@ A suite of tools to speed up development of large Ignition Perspective projects.
   - Export/Import - export and import database tables as csv files.
 
 - **Backup & Restore (currently under development)**
-  - Backup certain resources (tags, db tables, themes, images, icons) to a specific project folder. Useful for version control.
+  - Backup certain resources (tags, db tables, themes, icons) to a specific project folder. Useful for version control.
   - Restore resources from a specific project folder. Helps a developer quickly change "context" when working with different project versions.
 
 - **Misc Features**
