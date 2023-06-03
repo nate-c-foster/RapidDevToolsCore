@@ -103,25 +103,30 @@ def getUdtTags(rootTagPath, typeId = ""):
 	
 	try:
 	
-		if rootTagPath:
-			if typeId:
-				results = system.tag.browse(rootTagPath, {'recursive':True, 'tagType': 'UdtInstance', 'typeId':typeId})
-			else:
-				results = system.tag.browse(rootTagPath, {'recursive':True, 'tagType': 'UdtInstance'})
-		else:
-			return []
+	
+		results = system.tag.browse(rootTagPath, {'recursive':True, 'tagType': 'UdtInstance'})
+		
+#		if rootTagPath:
+#			if typeId:
+#				results = system.tag.browse(rootTagPath, {'recursive':True, 'tagType': 'UdtInstance', 'typeId':typeId})
+#			else:
+#				results = system.tag.browse(rootTagPath, {'recursive':True, 'tagType': 'UdtInstance'})
+#		else:
+#			return []
 		
 		# include root tag
 		tagType = str(system.tag.readBlocking(rootTagPath + '.tagType')[0].value)
 		if tagType == 'UdtInstance':	
-			tags.append({'tagPath':rootTagPath, 'tagType':tagType, 'tagConfig':""})
+			if not typeId or typeId in str(result['typeId']):
+				tags.append({'tagPath':rootTagPath, 'tagType':tagType, 'tagConfig':""})
 
 		
 		for result in results:
 			tagType = str(result['tagType'])
 			tagPath = str(result['fullPath'])
 			if tagType == 'UdtInstance':
-				tags.append({'tagPath':tagPath, 'tagType':tagType, 'tagConfig':""})
+				if not typeId or typeId in str(result['typeId']):
+					tags.append({'tagPath':tagPath, 'tagType':tagType, 'tagConfig':""})
 				
 	except:
 		print 'Error: getUdtTags()'
