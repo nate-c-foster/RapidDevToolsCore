@@ -14,7 +14,7 @@
 }
 
 .ia_checkbox .ia_checkbox__uncheckedIcon {
-    color: var(--checkbox--unchecked);
+   color: var(--checkbox--unchecked); 
 }
 
 /* Disabled checkbox style */

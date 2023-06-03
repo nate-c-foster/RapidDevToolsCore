@@ -22,8 +22,8 @@
             "binding": {
               "config": {
                 "fallbackDelay": 2.5,
-                "mode": "direct",
-                "tagPath": "[SCADA]RapidDev/Global/Log Console/Wrapper Log"
+                "mode": "expression",
+                "tagPath": "{session.custom.tagProvider} +\u0027RapidDev/Global/Log Console/Wrapper Log\u0027"
               },
               "type": "tag"
             }

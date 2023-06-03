@@ -58,7 +58,7 @@
               },
               "transforms": [
                 {
-                  "code": "\n\n\ttagProvider \u003d self.session.custom.tagProvider\n\ttypeId \u003d self.parent.custom.typeId\n\t\n\tresults \u003d system.tag.readBlocking(tagProvider + \u0027_types_/\u0027 + typeId + \u0027.Parameters\u0027)[0].value\n\t\n\toptions \u003d []\n\tfor result in results:\n\t\tparameter \u003d result.getProperty().name\n\t\toptions.append({\u0027value\u0027: parameter, \u0027label\u0027: parameter})\n\t\n\t\t\n\treturn options",
+                  "code": "\n\n\ttagProvider \u003d settings.getValue(\u0027Tag Editor\u0027, \u0027tagProvider\u0027)\n\ttypeId \u003d self.parent.custom.typeId\n\t\n\tresults \u003d system.tag.readBlocking(tagProvider + \u0027_types_/\u0027 + typeId + \u0027.Parameters\u0027)[0].value\n\t\n\toptions \u003d []\n\tif results:\n\t\tfor result in results:\n\t\t\tparameter \u003d result.getProperty().name\n\t\t\toptions.append({\u0027value\u0027: parameter, \u0027label\u0027: parameter})\n\t\n\t\t\n\treturn options",
                   "type": "script"
                 }
               ],

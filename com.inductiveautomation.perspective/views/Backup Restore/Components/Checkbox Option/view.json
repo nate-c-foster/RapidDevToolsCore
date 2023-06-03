@@ -72,7 +72,7 @@
           },
           "uncheckedIcon": {
             "color": {
-              "enabled": "var(--neutral-40)"
+              "enabled": "var(--neutral-50)"
             }
           }
         },
