@@ -7,6 +7,7 @@ A suite of tools to speed up development of large Ignition Perspective projects.
 
 ![functionalTagEditor](https://github.com/nate-c-foster/RapidDevToolsCore/assets/3751687/9a6309c5-abe5-462e-8d62-27dd5eb265b9)
 ![jsonDiff](https://github.com/nate-c-foster/RapidDevToolsCore/assets/3751687/e91ceb26-979e-4571-ab35-a18118866f41)
+![dbEditor](https://github.com/nate-c-foster/RapidDevToolsCore/assets/3751687/25ca5b9f-a6f1-4d6d-9adb-560ba7af998e)
 ## Features
 
 - **Tag Editors**
