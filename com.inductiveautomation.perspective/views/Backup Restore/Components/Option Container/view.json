@@ -16,7 +16,7 @@
       "persistent": true
     },
     "params.value": {
-      "paramDirection": "input",
+      "paramDirection": "inout",
       "persistent": true
     },
     "params.viewPath": {

@@ -15,7 +15,7 @@
       "persistent": true
     },
     "params.value": {
-      "paramDirection": "input",
+      "paramDirection": "inout",
       "persistent": true
     }
   },
@@ -28,17 +28,6 @@
   "root": {
     "children": [
       {
-        "events": {
-          "component": {
-            "onActionPerformed": {
-              "config": {
-                "script": "\t\n\tpayload \u003d { \"type\": self.view.params.type,\n\t\t\t\t\"label\": self.view.params.label,\n\t\t\t\t\"value\": self.props.selected}\n\t\n\tsystem.perspective.sendMessage(\"UpdateBackupOptions\",payload)"
-              },
-              "scope": "G",
-              "type": "script"
-            }
-          }
-        },
         "meta": {
           "name": "Checkbox"
         },

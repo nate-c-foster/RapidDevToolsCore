@@ -3,25 +3,25 @@
   "params": {
     "options": [
       {
-        "label": "SCADA",
+        "label": "[default]RapidDev",
         "value": true,
         "viewPath": "Backup Restore/Components/Checkbox Option"
       },
       {
-        "label": "Templates",
+        "label": "[SCADA]",
+        "value": true,
+        "viewPath": "Backup Restore/Components/Checkbox Option"
+      },
+      {
+        "label": "[SCADA]JBLM",
         "value": true,
         "viewPath": "Backup Restore/Components/Checkbox Option"
       }
-    ],
-    "type": ""
+    ]
   },
   "propConfig": {
     "params.options": {
-      "paramDirection": "input",
-      "persistent": true
-    },
-    "params.type": {
-      "paramDirection": "input",
+      "paramDirection": "inout",
       "persistent": true
     }
   },
@@ -45,14 +45,9 @@
           "props.instances": {
             "binding": {
               "config": {
+                "bidirectional": true,
                 "path": "view.params.options"
               },
-              "transforms": [
-                {
-                  "code": "\t\n\n\toptions \u003d []\n\t\n\tif value:\n\t\tfor\titem in value:\n\t\t\n\t\t\toption \u003d dict(item)\n\t\t\toption[\u0027type\u0027] \u003d self.view.params.type\n\t\t\toptions.append(option)\n\t\t\t\n\treturn options\n\t\t",
-                  "type": "script"
-                }
-              ],
               "type": "property"
             }
           }

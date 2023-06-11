@@ -79,6 +79,11 @@
               "enabled": false
             }
           },
+          "style": {
+            "borderColor": "var(--neutral-30)",
+            "borderStyle": "solid",
+            "borderWidth": "1px"
+          },
           "virtualized": false
         },
         "type": "ia.display.table"
@@ -162,7 +167,7 @@
                   },
                   "transforms": [
                     {
-                      "code": "\tif value:\n\t\treturn \u0027var(--red-50)\u0027\n\telse:\n\t\treturn \u0027var(--disabled-Icon)\u0027",
+                      "code": "\tif value:\n\t\treturn \u0027var(--enabled-Icon)\u0027\n\telse:\n\t\treturn \u0027var(--disabled-Icon)\u0027",
                       "type": "script"
                     }
                   ],

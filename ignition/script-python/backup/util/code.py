@@ -31,11 +31,32 @@ def zipTempDirectory(directoryName):
 
 	tempLocation = settings.getValue('Global','serverTempSaveLocation')
 	path = tempLocation + '/' + directoryName
+	format = 'zip'
 
-
-	shutil.make_archive(path, 'zip', path)
+	shutil.make_archive(path, format, path)
 	shutil.rmtree(path)
 	
+	
+#*****************************************************************************************************
+# Author:         Nate Foster
+# Company:        A.W. Schultz
+# Date:           March 2023
+#*****************************************************************************************************	
+def unZipTempFile(fileName):
+	"""unzip temporary file.
+	"""
+
+	tempLocation = settings.getValue('Global','serverTempSaveLocation')
+	path = tempLocation + '/' + fileName
+
+
+
+	from zipfile import ZipFile
+	
+	zipFile = ZipFile(path, 'r')
+	zipFile.extractall(path[:-len('.zip')])
+	zipFile.close()
+	os.remove(path)
 	
 	
 	
@@ -158,29 +179,26 @@ def exportTags(fileName, tagPath):
 
 
 
+
+
+
+
+
+
+
 #*****************************************************************************************************
 # Author:         Nate Foster
 # Company:        A.W. Schultz
 # Date:           June 2023
 #*****************************************************************************************************		
-def copyFileToProject(sourceSuffixPath,  destSuffixPath, projectName):
-	"""Copy file from the temp folder to the project resource folder.
+def copyFile(sourcePath,  destinationPath):
+	"""Copy file from sourcePath to destinationPath.
 	
 	Args:
-		sourceSuffixPath (str): The suffix path within the temp folder. Does not start with '/'.
-		destSuffixPath (str): The suffix path within the project resources folder. Does not start with '/'.
-		projectName (str): The project name where the resources will be copied to
+		sourcePath (str): Path to source file. Use '/' not '\\'.
+		destinationPath (str): Path to destination file. Use '/' not '\\'.
 
 	"""
-
-	tempLocation = settings.getValue('Global','serverTempSaveLocation')
-	sourcePath = tempLocation + '/' + sourceSuffixPath
-	
-	installationPath = settings.getValue('Global','installationPathIA')
-	destinationPath = installationPath + '/Ignition/data/projects/' + projectName + '/resources/' + destSuffixPath
-	
-#	print 'source : ', sourcePath
-#	print 'destination : ', destinationPath
 	
 	fileBytes = system.file.readFileAsBytes(sourcePath)
 	system.file.writeFile(destinationPath,fileBytes)
@@ -191,32 +209,51 @@ def copyFileToProject(sourceSuffixPath,  destSuffixPath, projectName):
 # Company:        A.W. Schultz
 # Date:           June 2023
 #*****************************************************************************************************	
-def copyFolderToProject(sourceSuffixPath, destSuffixPath, projectName):
-	"""Copy folder from the temp folder to the project resource folder.
+def copyFolder(sourcePath, destinationPath):
+	"""Copy folder from sourcePath to destinationPath.
 	
 	Args:
-		sourceSuffixPath (str): The suffix path within the temp folder. Does not start with '/'.
-		destSuffixPath (str): The suffix path within the project resources folder. Does not start with '/'.
-		projectName (str): The project name where the resources will be copied to
+		sourcePath (str): Path to source folder. Use '/' not '\\'.
+		destinationPath (str): Path to destination folder. Use '/' not '\\'.
 
 	"""
 
-	tempLocation = settings.getValue('Global','serverTempSaveLocation')
-	fullSourcePath = tempLocation + '/' + sourceSuffixPath
-	
-	for dirpath, dirnames, filenames in os.walk(fullSourcePath):
+	for dirpath, dirnames, filenames in os.walk(sourcePath):
 
 		for fileName in filenames:
-			fileSuffixPath = dirpath[len(fullSourcePath):].replace('\\','/') + '/' + fileName
-			sourcePath = sourceSuffixPath + fileSuffixPath
-			destPath = destSuffixPath +  fileSuffixPath
-	
-			copyFileToProject(sourcePath, destPath, projectName)
+			fileSuffixPath = dirpath[len(sourcePath):].replace('\\','/') + '/' + fileName
+			fileSourcePath = sourcePath + fileSuffixPath
+			fileDestinationPath = destinationPath +  fileSuffixPath
+			copyFile(fileSourcePath, fileDestinationPath)
+
+
+
 
 	
+#*****************************************************************************************************
+# Author:         Nate Foster
+# Company:        A.W. Schultz
+# Date:           June 2023
+#*****************************************************************************************************	
+def getResourceNamesFromProject(resourceType, projectName):
+	"""Copy folder from the temp folder to the project resource folder.
+	
+	Args:
+		resourceType (str): Examples: tags, tables, themes, icons
+		projectName (str): The project name where the resources will be scanned
 
+	"""
+	
+	installationPath = settings.getValue('Global','installationPathIA')
+	destinationPath = installationPath + '/Ignition/data/projects/' + projectName + '/resources/' + resourceType
 	
 	
+	names = []
+	
+	if os.path.exists(destinationPath):
+		names = [f for f in os.listdir(destinationPath) if os.path.isfile(destinationPath + '/' + f)]
+	
+	return names
 	
 	
 	

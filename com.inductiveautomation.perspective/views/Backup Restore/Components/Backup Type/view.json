@@ -1,10 +1,31 @@
 {
   "custom": {},
   "params": {
-    "options": [],
+    "expanded": false,
+    "options": [
+      {
+        "label": "[default]RapidDev",
+        "value": true,
+        "viewPath": "Backup Restore/Components/Checkbox Option"
+      },
+      {
+        "label": "[SCADA]",
+        "value": true,
+        "viewPath": "Backup Restore/Components/Checkbox Option"
+      },
+      {
+        "label": "[SCADA]JBLM",
+        "value": true,
+        "viewPath": "Backup Restore/Components/Checkbox Option"
+      }
+    ],
     "type": "Projects"
   },
   "propConfig": {
+    "params.expanded": {
+      "paramDirection": "input",
+      "persistent": true
+    },
     "params.options": {
       "paramDirection": "inout",
       "persistent": true
@@ -46,6 +67,7 @@
           "props.items[0].body.viewParams.options": {
             "binding": {
               "config": {
+                "bidirectional": true,
                 "path": "view.params.options"
               },
               "type": "property"
@@ -55,6 +77,14 @@
             "binding": {
               "config": {
                 "path": "view.params.type"
+              },
+              "type": "property"
+            }
+          },
+          "props.items[0].expanded": {
+            "binding": {
+              "config": {
+                "path": "view.params.expanded"
               },
               "type": "property"
             }
@@ -81,7 +111,6 @@
                 "viewParams": {},
                 "viewPath": "Backup Restore/Components/Backup Options"
               },
-              "expanded": false,
               "header": {
                 "content": {
                   "style": {

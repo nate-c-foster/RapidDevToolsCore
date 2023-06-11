@@ -3,8 +3,9 @@
     "style": {
       "borderTopColor": "var(--neutral-30)",
       "borderTopStyle": "solid",
-      "borderTopWidth": "1px",
-      "color": "var(--neutral-70)"
+      "borderTopWidth": "0px",
+      "color": "var(--neutral-70)",
+      "padding": "0px 3px"
     }
   }
 }

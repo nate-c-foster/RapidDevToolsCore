@@ -65,7 +65,7 @@
     }
   },
   "props": {
-    "address": "10.1.1.41",
+    "address": "127.0.0.1",
     "device": {},
     "geolocation": {},
     "locale": "en-US",

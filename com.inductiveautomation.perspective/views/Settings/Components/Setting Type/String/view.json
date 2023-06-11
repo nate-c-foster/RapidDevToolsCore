@@ -90,7 +90,7 @@
           }
         },
         "props": {
-          "color": "var(--red-50)",
+          "color": "var(--neutral-70)",
           "path": "material/clear",
           "style": {
             "cursor": "pointer",

@@ -65,17 +65,6 @@
         "type": "ia.display.label"
       },
       {
-        "events": {
-          "dom": {
-            "onKeyDown": {
-              "config": {
-                "script": "\t\n\tpayload \u003d { \"type\": self.view.params.type,\n\t\t\t\t\"label\": self.view.params.label,\n\t\t\t\t\"value\": self.props.text}\n\t\n\tsystem.perspective.sendMessage(\"UpdateBackupOptions\",payload)\n\t\n\t\n"
-              },
-              "scope": "G",
-              "type": "script"
-            }
-          }
-        },
         "meta": {
           "name": "TextField"
         },

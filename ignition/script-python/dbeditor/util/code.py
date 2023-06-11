@@ -113,7 +113,7 @@ def importDSintoDBtable(dataset, database, tableName, primaryKey, deleteExtra=Tr
 # Company:        A.W. Schultz
 # Date:           Nov 2022
 #*****************************************************************************************************	
-def exportDBtable(dbType, dbName, tableName, fileName, download=True):
+def exportDBtable(dbType, dbName, tableName, fileName='', download=True):
 	
 	params = { 'database':dbName, 'tableName':tableName }
 	queryPath = "General/" +  dbType + "/getTable"
@@ -124,6 +124,4 @@ def exportDBtable(dbType, dbName, tableName, fileName, download=True):
 	if download:
 		system.perspective.download(fileName, csvData)
 	else:
-		tempLocation = settings.getValue('Global','serverTempSaveLocation')
-		destinationPath = tempLocation + '/' + fileName
-		system.file.writeFile(destinationPath, csvData)
+		return csvData
