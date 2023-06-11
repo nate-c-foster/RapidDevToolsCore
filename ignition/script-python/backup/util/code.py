@@ -235,27 +235,58 @@ def copyFolder(sourcePath, destinationPath):
 # Company:        A.W. Schultz
 # Date:           June 2023
 #*****************************************************************************************************	
-def getResourceNamesFromProject(resourceType, projectName):
-	"""Copy folder from the temp folder to the project resource folder.
+def getResourceNames(resourcePath):
+	"""Get all file names in a resource folder.
 	
 	Args:
-		resourceType (str): Examples: tags, tables, themes, icons
-		projectName (str): The project name where the resources will be scanned
+		resourcePath (str): Path to directory of a resource type. Example "C:/Program Files/Inductive Automation/Ignition/data/projects/RapidDevToolsCore/resources/themes"
 
 	"""
 	
-	installationPath = settings.getValue('Global','installationPathIA')
-	destinationPath = installationPath + '/Ignition/data/projects/' + projectName + '/resources/' + resourceType
-	
-	
 	names = []
 	
-	if os.path.exists(destinationPath):
-		names = [f for f in os.listdir(destinationPath) if os.path.isfile(destinationPath + '/' + f)]
+	if os.path.exists(resourcePath):
+		names = [f for f in os.listdir(resourcePath) if os.path.isfile(resourcePath + '/' + f)]
 	
 	return names
 	
 	
 	
+#*****************************************************************************************************
+# Author:         Nate Foster
+# Company:        A.W. Schultz
+# Date:           June 2023
+#*****************************************************************************************************	
+def convertFilenameToLabel(filename, resourceType):
+	"""Convert resource filename to a label
+	
+	foo__name1-name2-name3.type => [foo]name1/name2/name3
+	
+	Args:
+		filename (str): Full filename. 
+		resourceType (str) : Examples 'tags', 'tables', 'themes', 'icons'
+
+	"""
+	name = filename
+
+	if resourceType == 'tags':
+		name = '[' + name.replace('__',']')
+		name = name.replace('-','/')
+		name = name.split('.')[0]
+	
+	elif resourceType == 'tables':
+		name = '[' + name.replace('__',']')
+		if '.csv' in name:
+			name = name[:-len('.csv')]
+	
+	elif resourceType == 'themes':
+		if '.css' in name:
+			name = name[:-len('.css')]
+		
+	elif resourceType == 'icons':
+		name = name.split('.')[0]
+
+	return name
+
 	
 	
