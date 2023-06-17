@@ -52,7 +52,7 @@ def getViews(rootViewPath):
 				return		
 				
 				
-			view = { 	"viewPath": viewPath,
+			view = { 	"viewPath": viewPath.replace('\\','/'),
 						"viewJSON": viewJSONStr,
 						"resourceJSON": resourceJSONStr
 					}

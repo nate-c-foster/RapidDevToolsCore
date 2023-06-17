@@ -6,21 +6,6 @@
     --red-50: #F55353;
     --red-60: #FA8E8E;
 
-
-    /* Stole from Grafana */
-    --gray-98: #f7f8fa;
-    --gray-97: #f1f5f9;
-    --gray-95: #e9edf2; 
-    --gray-90: #dce1e6; 
-    --gray-85: #c7d0d9; 
-    --gray-70: #9fa7b3; 
-    --gray-60: #7b8087; 
-    --gray-33: #464c54; 
-    --gray-25: #2c3235; 
-    --gray-15: #202226; 
-    --gray-10: #141619; 
-    --gray-05: #111217; 
-
     --blue-95: #5794f2; /* blue95 */
     --blue-85: #33a2e5; /* blueText */
     --blue-80: #3274d9; /* blue80 */
@@ -129,6 +114,9 @@
 
     /* Menu */
     --menu-selected: var(--orange-77);
+
+    /* Table */
+    --tableTitle-background: var(--neutral-30);
 
     /* Functional */
     --error: var(--red-50); /* red-50 */

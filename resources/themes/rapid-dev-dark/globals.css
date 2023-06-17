@@ -19,15 +19,16 @@ input, textarea, keygen, select, button {
 }
 
 
-/*
+
 ::selection {
     background: var(--callToActionHighlight);
     color: var(--label);
 }
-*/
 
 
+/*
 ::selection {
     background: rgba(12, 41, 61, 0.99);
     color: var(--label);
 }
+*/

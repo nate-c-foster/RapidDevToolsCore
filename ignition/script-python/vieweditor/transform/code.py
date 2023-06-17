@@ -51,6 +51,9 @@ def insertComponent(keyPath, jsonString):
 	def viewTransform(view):
 	
 		viewJSONobj = dict(system.util.jsonDecode(view["viewJSON"]))
+		
+	
+		
 		if valueIsLambda:
 			viewJSONobj = util.json.insertValueAtKeypath(viewJSONobj, keyPath.split('.'), f(view))	
 		else:
@@ -228,8 +231,8 @@ def forEachComponent(componentType, componentFilter, keypath, updateValue, inser
 						if jsonObj['type'] == componentType and componentFilter(jsonObj):
 							jsonObj = componentTransform(jsonObj)
 					except:
-							print 'typeTransform exception'
-							pass
+						print 'typeTransform exception'
+						pass
 							
 				elif key == 'root':
 					jsonObj['root'] = typeTransform(jsonObj['root'], componentType, componentFilter, componentTransform)
@@ -251,8 +254,8 @@ def forEachComponent(componentType, componentFilter, keypath, updateValue, inser
 						if jsonObj['type'] == componentType and componentFilter(jsonObj):
 							values.append(_getComponent(jsonObj, keypath))
 					except:
-							print 'typeTransform exception'
-							pass
+						print 'typeQuery exception'
+						pass
 							
 				elif key == 'root':
 					values = values + typeQuery(jsonObj['root'], componentType, componentFilter)
@@ -279,6 +282,7 @@ def forEachComponent(componentType, componentFilter, keypath, updateValue, inser
 				componentTransformFunction = lambda componentObj : _updateComponent(componentObj, keypath, f(view, componentObj))
 			else:
 				componentTransformFunction = lambda componentObj : _updateComponent(componentObj, keypath, updateValue)
+	
 		elif insertValue:
 			if insertValue.startswith('lambda'):
 				f = eval(insertValue)
@@ -290,6 +294,14 @@ def forEachComponent(componentType, componentFilter, keypath, updateValue, inser
 		
 		
 		viewJSONobj = typeTransform(viewJSONobj, componentType, componentFilterFunction, componentTransformFunction)
+		
+		try:
+			view['updatedValues'].append( filter(lambda x : not x == "", typeQuery(viewJSONobj, componentType, lambda x : True)) )
+		except:
+			view['updatedValues'].append([])
+			
+		
+		
 		view["viewJSON"] = system.util.jsonEncode(viewJSONobj)
 		return view
 		
