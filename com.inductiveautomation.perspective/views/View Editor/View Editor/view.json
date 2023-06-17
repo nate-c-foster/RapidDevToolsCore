@@ -377,7 +377,7 @@
                     },
                     "props": {
                       "style": {
-                        "classes": "RapidDev/Tabel/Title"
+                        "classes": "RapidDev/Table/Title"
                       }
                     },
                     "type": "ia.container.flex"
@@ -682,7 +682,10 @@
                           1000,
                           50,
                           100
-                        ]
+                        ],
+                        "style": {
+                          "backgroundColor": "var(--tableTitle-background)"
+                        }
                       },
                       "rows": {
                         "striped": {

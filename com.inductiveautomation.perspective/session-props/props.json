@@ -62,6 +62,17 @@
     "props.lastActivity": {
       "access": "SYSTEM",
       "persistent": false
+    },
+    "props.theme": {
+      "binding": {
+        "config": {
+          "bidirectional": true,
+          "fallbackDelay": 2.5,
+          "mode": "expression",
+          "tagPath": "{this.custom.tagProvider} + \u0027RapidDev/Global/Settings/theme\u0027"
+        },
+        "type": "tag"
+      }
     }
   },
   "props": {
@@ -69,7 +80,6 @@
     "device": {},
     "geolocation": {},
     "locale": "en-US",
-    "theme": "rapid-dev-dark",
     "timeZoneId": "America/Chicago"
   }
 }

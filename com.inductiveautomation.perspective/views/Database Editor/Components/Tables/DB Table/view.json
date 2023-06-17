@@ -680,12 +680,12 @@
                     "color": "var(--neutral-70)",
                     "path": "material/south_west",
                     "style": {
-                      "backgroundColor": "var(--neutral-30)",
+                      "backgroundColor": "var(--tableTitle-background)",
                       "cursor": "pointer"
                     }
                   },
                   "style": {
-                    "backgroundColor": "var(--neutral-30)",
+                    "backgroundColor": "var(--tableTitle-background)",
                     "classes": "",
                     "padding": "3px"
                   }
@@ -851,7 +851,7 @@
         },
         "props": {
           "style": {
-            "classes": "RapidDev/Tabel/Title"
+            "classes": "RapidDev/Table/Title"
           }
         },
         "type": "ia.container.flex"
@@ -908,22 +908,22 @@
           "cells": {
             "allowEditOn": "single-click",
             "style": {
-              "classes": "RapidDev/Tabel/Cell"
+              "classes": "RapidDev/Table/Cell"
             }
           },
           "headerStyle": {
             "color": "var(--blue-85)"
           },
           "pager": {
-            "bottom": false,
             "initialOption": 100,
             "options": [
               100,
               500,
-              1000,
-              50,
-              100
-            ]
+              1000
+            ],
+            "style": {
+              "backgroundColor": "var(--tableTitle-background)"
+            }
           },
           "rows": {
             "height": "25px",

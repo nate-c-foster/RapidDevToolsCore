@@ -65,7 +65,7 @@
           "cells": {
             "style": {
               "backgroundColor": "var(--neutral-10)",
-              "classes": "RapidDev/Tabel/Cell"
+              "classes": "RapidDev/Table/Cell"
             }
           },
           "headerStyle": {

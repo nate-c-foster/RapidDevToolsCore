@@ -447,7 +447,7 @@
                     },
                     "props": {
                       "style": {
-                        "classes": "RapidDev/Tabel/Title"
+                        "classes": "RapidDev/Table/Title"
                       }
                     },
                     "type": "ia.container.flex"
@@ -536,7 +536,7 @@
                           "viewParams": {},
                           "viewPath": "",
                           "visible": true,
-                          "width": 6
+                          "width": 8
                         },
                         {
                           "align": "center",
@@ -603,7 +603,7 @@
                           },
                           "viewParams": {},
                           "viewPath": "Tag Editor/Components/Config Table Button",
-                          "visible": true,
+                          "visible": false,
                           "width": 1
                         },
                         {
@@ -1121,7 +1121,10 @@
                           1000,
                           50,
                           100
-                        ]
+                        ],
+                        "style": {
+                          "backgroundColor": "var(--tableTitle-background)"
+                        }
                       },
                       "rows": {
                         "striped": {

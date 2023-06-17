@@ -749,7 +749,7 @@
         },
         "props": {
           "style": {
-            "classes": "RapidDev/Tabel/Title"
+            "classes": "RapidDev/Table/Title"
           }
         },
         "type": "ia.container.flex"
@@ -787,7 +787,7 @@
           "cells": {
             "allowEditOn": "single-click",
             "style": {
-              "classes": "RapidDev/Tabel/Cell"
+              "classes": "RapidDev/Table/Cell"
             }
           },
           "data": [

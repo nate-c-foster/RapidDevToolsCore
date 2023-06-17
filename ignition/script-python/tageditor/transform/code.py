@@ -116,6 +116,11 @@ def insertConfigValue(keyPath, value):
 			tagConfig = system.util.jsonDecode(tag['tagConfig'])
 		else:
 			tagConfig = tageditor.util.getTagConfigObj(tag['tagPath'])
+			
+		try:
+			tag['currentValues'].append(_getComponent(tagConfig, keyPath))
+		except:
+			tag['currentValues'].append('query error')	
 
 		if valueIsLambda:
 			util.json.insertValueAtKeypath(tagConfig, keyPath.split('.'), f(tag))

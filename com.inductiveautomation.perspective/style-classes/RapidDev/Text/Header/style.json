@@ -2,7 +2,8 @@
   "base": {
     "style": {
       "color": "var(--blue-85)",
-      "fontSize": "14px"
+      "fontSize": "14px",
+      "fontWeight": "bold"
     }
   }
 }
