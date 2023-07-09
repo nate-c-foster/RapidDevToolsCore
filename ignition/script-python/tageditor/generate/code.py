@@ -18,7 +18,7 @@ Todo:
 # Company:        A.W. Schultz
 # Date:           Jan 2023
 #*****************************************************************************************************		
-def getTags(rootTagPath):
+def getTags(rootTagPath, recursive=False):
 	"""Generate all tags (atomic and udt instances) under a given root tag path.
 	
 	Args:
@@ -29,7 +29,7 @@ def getTags(rootTagPath):
 	"""
 	
 	tags = []
-	results = system.tag.browse(rootTagPath, {'recursive':True})
+	results = system.tag.browse(rootTagPath, {'recursive':recursive})
 	
 	# include the root tag
 	tagType = str(system.tag.readBlocking(rootTagPath + '.tagType')[0].value)
@@ -53,7 +53,7 @@ def getTags(rootTagPath):
 # Company:        A.W. Schultz
 # Date:           Jan 2023
 #*****************************************************************************************************		
-def getAtomicTags(rootTagPath):
+def getAtomicTags(rootTagPath, recursive=False):
 	"""Generate all atom tags under a given root tag path.
 	
 	Args:
@@ -64,7 +64,7 @@ def getAtomicTags(rootTagPath):
 	"""
 	
 	tags = []
-	results = system.tag.browse(rootTagPath, {'recursive':True, 'tagType': 'AtomicTag'})
+	results = system.tag.browse(rootTagPath, {'recursive':recursive, 'tagType': 'AtomicTag'})
 	
 	# include root tag
 	tagType = str(system.tag.readBlocking(rootTagPath + '.tagType')[0].value)
@@ -88,7 +88,7 @@ def getAtomicTags(rootTagPath):
 # Company:        A.W. Schultz
 # Date:           Jan 2023
 #*****************************************************************************************************		
-def getUdtTags(rootTagPath, typeId = ""):
+def getUdtTags(rootTagPath, typeId = "", recursive=False):
 	"""Generate all udt instances under a given root tag path.
 	
 	Args:
@@ -104,7 +104,7 @@ def getUdtTags(rootTagPath, typeId = ""):
 	try:
 	
 	
-		results = system.tag.browse(rootTagPath, {'recursive':True, 'tagType': 'UdtInstance'})
+		results = system.tag.browse(rootTagPath, {'recursive':recursive, 'tagType': 'UdtInstance'})
 		
 #		if rootTagPath:
 #			if typeId:
